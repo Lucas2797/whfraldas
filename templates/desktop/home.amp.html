@@ -1,0 +1,48 @@
+{% extends 'desktop/base.amp.html' %}
+{% load static %}
+{% block title %}
+    wfhome
+{% endblock title %}
+
+    {% block content %}
+    <div class="first">
+        <amp-carousel class="carousel1"
+        layout="fixed"
+        height="400"
+        width="1350"
+        type="slides">
+        {% for b in filter1 %}
+        <div class="slide">
+            <amp-img src="{{b.get_first_img.imagem.url}}"
+            layout="fixed"
+            width="400"
+            height="300"
+            alt="Border Collie"></amp-img>
+            <amp-fit-text class="carousel1" layout="fixed"
+            width="400"
+            height="300">{{b.nome}} {{b.text}} </amp-fit-text>
+        </div>
+        {% endfor %}
+        </amp-carousel>
+    </div>
+    <div class="second">
+        <h1 class="principal">Bem Vindo a WF Fraldas</h1>
+        <p class="principal">ASOKDODAKODWQOKDQOKDKOWQDKOQKODQOKDQKOD </p>
+    </div>
+    <div class="third">
+        {% for b in filter2 %}
+            <div class="icon">
+                <amp-img class="icon" src="{{b.get_first_img.imagem.url}}"
+                width="170"
+                height="170"
+                layout="fixed"
+                alt="">
+                </amp-img>
+                <div class="icon-text">
+                    <h3 class="principal">{{b.nome}}</h3>
+                    <p>{{b.text}}</p>
+                </div>
+            </div>
+        {% endfor %}
+    </div>
+{% endblock %}
