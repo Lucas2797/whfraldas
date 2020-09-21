@@ -17,6 +17,8 @@
     <script async custom-element="amp-lightbox-gallery"
         src="https://cdn.ampproject.org/v0/amp-lightbox-gallery-0.1.js"></script>
     <script async custom-element="amp-iframe" src="https://cdn.ampproject.org/v0/amp-iframe-0.1.js"></script>
+    <script async custom-element="amp-fx-collection" src="https://cdn.ampproject.org/v0/amp-fx-collection-0.1.js"></script>
+
 
     <!-- GOOGLE FONTS -->
     <link href="https://fonts.googleapis.com/css2?family=Grenze+Gotisch:wght@700&display=swap" rel="stylesheet">
@@ -159,17 +161,87 @@
         }
         
         /* Header END */
+        div.page{
+            margin-top: 100px;
+        }
         /* Texts  */
         .principal{
             color: rgba(187, 248, 248, 0.363);
             text-shadow: 2px 2px rgb(0, 0, 0);
+        }
+
+
+        div.title{
+            width: 100%;
+            height: 50px;
+            box-shadow: 5px 5px 5px 5px rgba(0, 0, 0, 0.2);
+            text-align: center;
+        }
+
+        .center{
+            text-align: center;
+        }
+        /* title styles */
+
+        :root{
+            --bg-color: rgb(76, 107, 107);
+        }
+
+        .home-title span{
+            position: relative;
+            overflow: hidden;
+            display: block;
+            line-height: 1.2;
+        }
+
+        .home-title span::after{
+            content: '';
+            position: absolute;
+            top: 0;
+            right: 0;
+            width: 100%;
+            height: 100%;
+            background: white;
+            animation: a-ltr-after 0.5s cubic-bezier(.77,0,.18,1) forwards;
+            transform: translateX(-101%);
+        }
+
+        .home-title span::before{
+            content: '';
+            position: absolute;
+            top: 0;
+            right: 0;
+            width: 100%;
+            height: 100%;
+            background: var(--bg-color);
+            animation: a-ltr-before 0.5s cubic-bezier(.77,0,.18,1) forwards;
+            transform: translateX(0);
+        }
+
+        .home-title span:nth-of-type(1)::before,
+        .home-title span:nth-of-type(1)::after{
+            animation-delay: 1s;
+        }
+
+        .home-title span:nth-of-type(2)::before,
+        .home-title span:nth-of-type(2)::after{
+            animation-delay: 1.5s;
+        }
+
+        @keyframes a-ltr-after{
+            0% {transform: translateX(-100%)}
+            100% {transform: translateX(101%)}
+        }
+
+        @keyframes a-ltr-before{
+            0% {transform: translateX(0)}
+            100% {transform: translateX(200%)}
         }
         /* Texts END */
 
 
         /* HOME */
         div.first {
-            margin-top: 100px;
             background: linear-gradient(45deg, #444 7.14%, rgba(187, 248, 248, 0.363) 7.14%, rgba(187, 248, 248, 0.363) 50%, #444 50%, #444 57.14%, rgba(187, 248, 248, 0.363) 57.14%, rgba(187, 248, 248, 0.363) 100%);
             background-size: 9.9px 9.9px;
             width: 100%;
@@ -182,16 +254,16 @@
         }
 
         amp-carousel.carousel1{
+            background: fixed;
         }
 
         amp-fit-text.carousel1{
             font-size: 40px;
             color: black;
+            background: linear-gradient(90deg, rgba(250, 250, 250, 0.063), white, rgba(250, 250, 250, 0.063));
             margin-left: 80px;
         }
 
-
-        /* second  */
         div.second{
             width: 100%;
             text-align: center;
@@ -199,9 +271,6 @@
             bottom: 0;
         }
 
-        
-        /* second END */
-        /* third  */
         div.third{
             display: flex;
             width: 100%;
@@ -220,22 +289,147 @@
         amp-img.icon{
             margin-left: 35%;
         }
-        /* third END  */
 
         /* HOME END */
 
+        /* PRODUCT  */
 
+        div.prod{
+            padding-top: 0px;
+            border-top: 0.2px;
+            border-bottom: 0px;
+            border-style: groove;
+            border-color: rgb(101, 138, 138);
+        }
 
-        /* FOOTER END */
-        div.footer{
+        amp-carousel.carousel2{
+            margin-top: 50px;
+            width: 100%;
+        }
+
+        h1.product{
+            font-size: 35px;
+        }
+        p.product{
+            font-size: 20px;
+        }
+        
+        amp-fit-text.carousel2{
+            position: absolute;
+            margin-left: 200px;
+            margin-top: 40px;
+        }
+
+        /* PRODUCT END */
+        /* CONTACT */
+        div.box-form{
+            margin-left: 55px;
+            width: 400px;
+            text-align: center;
+            background-color: rgba(101, 138, 138, 0.7);
+            border-style: groove;
+            border-color: silver;
+            box-shadow: 0px 10px 10px 10px rgba(0, 0, 0, 0.2);
+        }
+        
+
+        div.contact{
+            width: 100%;
+        }
+        
+        div.endereco{
+            margin-right: 90px;
+            margin-top: 200px;
+            width: 300px;
+            height: 100px;
+        }
+
+        h1.cont{
+            margin-top: 0px;
+        }
+
+        h2.contact-text{
+            margin-bottom: 10px;
+        }
+
+        div.checkbuttons{
+            margin-top: 50px;
+            align-items: center;
+            text-align: center;
+        }
+
+        .control-me::after {
+            content: "😃";
+            font-size: 100px;
+        }
+        #toggle:checked ~ .control-me::after {
+            content: "😩";
+            background-color: aqua;
+        }
+
+        label.checkbut {
+            font-size: 25px;
+            background: rgba(187, 248, 248, 0.363);
+            padding: 15px 60px;
+            border-radius: 0.5rem;
+            margin-left: 3%;
+            border-style: groove;
+            border-color: rgba(0, 0, 0, 0.2);
+            transition-property: padding, background, border-color ;
+            transition-duration: 0.3s, 0.5s, 0.5s;
+        }
+
+        label.checkbut:hover{
+            background: rgba(101, 138, 138, 0.4);
+            border-style: groove;
+            border-color: silver;
+            padding: 25px 70px;
+        }
+        label.checkbut:active{
+            background-color: rgba(101, 138, 138, 0.6);
+            padding: 23px 68px;
+        }
+
+        .visually-hidden {
+            position: absolute;
+            left: -100vw;
+        }
+
+        div.contact-text{
+            text-align: center;
+        }
+
+        div.contacting{
             height: 200px;
+        }
+
+
+        /* CONTACT END */
+
+        /* FOOTER  */
+
+        
+        footer{
+            margin-top: 20px;
+            height: 60px;
             background-color: rgb(101, 138, 138);
             width: 100%;
             text-align: center;
-            position: relative;
-            margin-bottom: 0px;
+            position: fixed;
             bottom: 0px;
+            left: 0px;
+            overflow: hidden;
+            transition-property: background-color, height;
+            transition-duration: 1s;
         }
+
+        footer:hover{
+            height: 300px;
+            background-color: blue;
+        }
+
+
+
         a.footer{
             color: black;
             text-decoration: none;
@@ -246,11 +440,6 @@
 
 </head>
 
-{% if v1 == 1 %}
-    <body style="background-color: black;">
-{% else %}
-    <body>
-{% endif %}
     <body>
     <div>
         <nav>               
@@ -261,7 +450,7 @@
             </a>
             <ul class="link">
                 <li class="link"><a class="link" href="{% url 'home' %}">Home</a></li>
-                <li class="link"><a class="link" href="{% url 'history' %}">Produto</a></li>
+                <li class="link"><a class="link" href="{% url 'product' %}">Produto</a></li>
                 <li class="link"><a class="link" href="{% url 'history' %}">História</a></li>
                 <li class="link"><a class="link" href="{% url 'contact' %}">Contato</a></li>
             </ul>
@@ -276,17 +465,17 @@
     <!-- Start Footer -->
     <br>
     <div class="footer">
-        <footer>
+        <footer amp-fx="float-in-bottom">
             <a class="footer" href="https://c2view.com.br/">
-                <small>
+                <small class="principal">
                     © C2View
                 </small>
             </a>
-            <amp-iframe width="1400" height="200"
+            <amp-iframe width="1400" height="300"
             sandbox="allow-scripts allow-same-origin"
             layout="fixed"
             frameborder="0"
-            src="https://maps.google.com/maps?width=1400&amp;height=600&amp;hl=en&amp;q=Av%20Carlos%20mariguela%20-%20RJ,%20737%20loja%202%20Marica+(JRModas)&amp;t=&amp;z=15&amp;ie=UTF8&amp;iwloc=B&amp;output=embed">
+            src="https://maps.google.com/maps?width=1200&amp;height=600&amp;hl=en&amp;q=Av%20Carlos%20mariguela%20-%20RJ,%20737%20loja%202%20Marica+(JRModas)&amp;t=&amp;z=15&amp;ie=UTF8&amp;iwloc=B&amp;output=embed">
             </amp-iframe>
         </footer>
     </div>
