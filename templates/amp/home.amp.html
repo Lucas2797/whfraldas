@@ -1,0 +1,69 @@
+{% extends 'amp/base.amp.html' %}
+{% load static %}
+{% block title %}
+    Wf Home
+{% endblock title %}
+    {% block content %}
+    <div class="page">
+        <div class="first">
+            <amp-carousel lightbox controls autoplay delay="3000" class="carousel1"
+            layout="responsive"
+            height="4"
+            width="9"
+            type="slides">
+            {% for b in filter1 %}
+            <div class="slide home-title">
+                <amp-img src="{{b.get_first_img.imagem.url}}"
+                layout="responsive"
+                width="9"
+                height="3"
+                alt="Border Collie"></amp-img>
+                <h1>test</h1>
+                <amp-fit-text class="carousel1" layout="responsive"
+                width="200"
+                height="900"><span>{{b.nome}} {{b.text}}</span></amp-fit-text>
+            </div>
+            {% endfor %}
+            </amp-carousel>
+        </div>
+        <div class="second">
+            <h1 class="principal home-title"><span>Bem Vindo a WF Fraldas</span></h1>
+            <p class="principal">ASOKDODAKODWQOKDQOKDKOWQDKOQKODQOKDQKOD </p>
+        </div>
+        <div class="third">
+            {% for b in filter2 %}
+                <div class="icon">
+                    <amp-img class="icon" src="{{b.get_first_img.imagem.url}}"
+                    width="170"
+                    height="170"
+                    layout="fixed"
+                    alt="">
+                    </amp-img>
+                    <div class="icon-text">
+                        <h3 class="principal">{{b.nome}}</h3>
+                        <p>{{b.text}}</p>
+                    </div>
+                </div>
+            {% endfor %}
+        </div>
+        <div class="jobs">
+            <h1 class="principal center"> Vagas </h1>
+            {% for v in vagas %}
+            <a class="job" href="{% url 'contact' %}">
+                <div class="job">
+                    <h2 class="principal center">{{v.position}}</h2>
+                    <h3 class="principal">Descrição</h3>
+                    <p>{{v.description|truncatechars:150}}</p>
+                    <h3 class="principal">Requisitos</h3>
+                    <p>{{v.requirements|truncatechars:150}}</p>
+                </div>
+            </a>
+            {% endfor %}
+            <div class="see_all">
+                <a class="see_all" href="{% url 'contact' %}">
+                    <h2 class="principal">Ver Todas</h2>
+                </a>
+            </div>
+        </div>
+</div>
+{% endblock %}

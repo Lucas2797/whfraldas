@@ -1,0 +1,20 @@
+{% extends "desktop/base.amp.html" %}
+
+
+{% block content %}
+  
+<div class="title">
+    <h1 class="principal">Novidades</h1>
+</div>
+
+<div class="newing">
+    {% for new in news %}
+        <h1 class="principal">{{new.headline}}</h1>
+        
+    {% endfor %}
+
+</div>
+
+
+
+{% endblock %}

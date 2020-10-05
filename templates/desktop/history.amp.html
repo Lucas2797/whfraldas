@@ -1,34 +1,15 @@
 {% extends "desktop/base.amp.html" %}
+{% load static %}
 
 {% block content %}
     <div class="page">
-    <div class="title">
-        <h1 class="principal home-title">História</h1>
-    </div>
-    {% for p in filter1 %}
-        <div class="prod">
-            <amp-carousel width="1350"
-            height="400"
-            layout="fixed"
-            type="slides"
-            class="carousel2"
-            lightbox delay="3000">
-            {% for i in p.banner_images.all %}
-            <div class="slide">
-                <amp-img src="{{i.imagem.url}}"
-                width="400"
-                height="450"
-                layout="fixed"
-                alt=""></amp-img>
-                <amp-fit-text class="carousel2" layout="fixed"
-                width="400"
-                height="300"><h1 class="product principal home-title"><span>{{p.nome}}</span></h1><p class="product principal home-title"><span>{{i.image_text}}</span></p></amp-fit-text>
-            </div>
-            {% endfor %}
-            </amp-carousel>
-        </div>
-      
-        {% endfor %}
+      <h1 class="principal center">Desculpe, página em desenvolvimento.</h1>
+      <amp-img class="center" src="{% static 'home/images.png' %}"
+        width="200"
+        height="200"
+        layout="fixed"
+        alt="">
+      </amp-img>
 
     </div>
 {% endblock %}

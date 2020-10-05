@@ -6,18 +6,18 @@
         <h1 class="principal home-title">Produtos</h1>
     </div>
     {% for p in filter1 %}
-        <div class="prod">
-            <amp-carousel width="1350"
-            height="400"
-            layout="fixed"
+        <div class="prod" amp-fx="fly-in-left" data-fly-in-distance="40%" data-duration="2000ms">
+            <amp-carousel width="10"
+            height="3"
+            layout="responsive"
             type="slides"
             class="carousel2"
             lightbox delay="3000">
             {% for i in p.banner_images.all %}
-            <div class="slide">
+            <div class="slide2">
                 <amp-img src="{{i.imagem.url}}"
-                width="400"
-                height="450"
+                width="450"
+                height="400"
                 layout="fixed"
                 alt=""></amp-img>
                 <amp-fit-text class="carousel2" layout="fixed"

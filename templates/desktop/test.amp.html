@@ -17,7 +17,7 @@
     <script async custom-element="amp-lightbox-gallery"
         src="https://cdn.ampproject.org/v0/amp-lightbox-gallery-0.1.js"></script>
     <script async custom-element="amp-iframe" src="https://cdn.ampproject.org/v0/amp-iframe-0.1.js"></script>
-
+    <script async custom-element="amp-fx-collection" src="https://cdn.ampproject.org/v0/amp-fx-collection-0.1.js"></script>
     <!-- GOOGLE FONTS -->
     <link href="https://fonts.googleapis.com/css2?family=Grenze+Gotisch:wght@700&display=swap" rel="stylesheet">
     <style amp-boilerplate>
@@ -89,6 +89,8 @@
         </style>
     </noscript>
     <style amp-custom>
+        body{
+        }
         /* Basic styles */
         *,
         *::before,
@@ -101,7 +103,6 @@
         }
 
         body {
-        display: flex;
         align-items: center;
         justify-content: center;
         overflow: hidden;
@@ -172,12 +173,119 @@
 
 </head>
     <body>
-        <h1 class="home-title">
-            <span>Simple text reveal with css</span>
-            <span>using pseudo elements</span>
-        </h1>
+        <!-- descobrir text -->
+        <div class="one"></div>
+            <h1 class="home-title">
+                <span>Simple text reveal with css</span>
+                <span>using pseudo elements</span>
+            </h1>
         <h5 class="home-title">
             <span> ALOOOOW</span></h5>
+        </div>
+        <!-- descobrir text END -->
+        <!-- fade in  -->
+        <div class="one"></div>
+            <h1 amp-fx="fade-in" data-parallax-factor="1.5">
+                A title that SHOWS
+            </h1>
+        </div>
+        <!-- fade in END -->
+        <!-- scrolla mais rapido -->
+        <div class="one">
+            <h1 amp-fx="parallax" data-parallax-factor="1.5">
+                A title that moves faster than other content.
+            </h1>
+        </div>
+        <!-- scrolla mais rapido END -->
+        <!-- fade image-->
+        <br>
+        <div class="one">
+            <div amp-fx="fade-in" data-duration="2000ms" data-easing="cubic-bezier(0.00, 0.00, 1.00, 1.00)">
+                <amp-img
+                width="200"
+                height="200"
+                layout="fixed"
+                src="{% static 'icons/wf-pronto-transparent.png' %}"
+                ></amp-img>
+            </div>
+        </div>
+        <!-- fade image END -->
+        <!-- image -->
+        <div class="one">
+            <div amp-fx="fade-in" data-easing="cubic-bezier(5.40, 0.00, 0.40, 1.00)">
+                <amp-img
+                width="400"
+                height="200"
+                layout="fixed"
+                src="https://picsum.photos/1600/900?image=1069"
+                ></amp-img>
+            </div>
+        </div>
+        <!-- image end -->
+        <!-- fade-in scroll-->
+        <div class="one">
+            <div amp-fx="fade-in-scroll" data-margin-end="80%">
+                <amp-img
+                width="400"
+                height="400"
+                layout="fixed"
+                src="https://picsum.photos/1600/900?image=1069"
+                ></amp-img>
+            </div>
+        </div>
+        <!-- fade-in scroll END-->
+        <div class="one">
+            <div amp-fx="fade-in-scroll" data-margin-end="80%">
+                <amp-img
+                width="400"
+                height="400"
+                layout="fixed"
+                src="https://picsum.photos/1600/900?image=1069"
+                ></amp-img>
+            </div>
+        </div>        <div class="one">
+            <div amp-fx="fade-in-scroll" data-margin-end="80%">
+                <amp-img
+                width="400"
+                height="400"
+                layout="fixed"
+                src="https://picsum.photos/1600/900?image=1069"
+                ></amp-img>
+            </div>
+        </div>        <div class="one">
+            <div amp-fx="fade-in-scroll" data-margin-end="80%">
+                <amp-img
+                width="400"
+                height="400"
+                layout="fixed"
+                src="https://picsum.photos/1600/900?image=1069"
+                ></amp-img>
+            </div>
+        </div>        <div class="one">
+            <div amp-fx="fade-in-scroll" data-margin-end="80%">
+                <amp-img
+                width="400"
+                height="400"
+                layout="fixed"
+                src="https://picsum.photos/1600/900?image=1069"
+                ></amp-img>
+            </div>
+        </div>        <div class="one">
+            <div amp-fx="fade-in-scroll" data-margin-end="80%">
+                <amp-img
+                width="400"
+                height="400"
+                layout="fixed"
+                src="https://picsum.photos/1600/900?image=1069"
+                ></amp-img>
+            </div>
+        </div>
+        <div class="one">
+                <amp-img amp-fx="fly-in-bottom" data-easing="linear" width="1280" height="873" layout="responsive" src="https://images.unsplash.com/photo-1473806189829-9641421a59f1?ixlib=rb-0.3.5&ixid=eyJhcHBfaWQiOjEyMDd9&s=75ddee8b694c5bef8cb935f6d0effa3a&auto=format&fit=crop&w=1650&q=80" alt="Picture of a starry sky"></amp-img>
+                <amp-img amp-fx="fade-in-scroll" width="1600" height="900" layout="responsive" src="https://images.unsplash.com/photo-1528067609263-ca1bca6f0af1?ixlib=rb-0.3.5&ixid=eyJhcHBfaWQiOjEyMDd9&s=719da4579acae6264f2dd12a29668441&auto=format&fit=crop&w=2378&q=80"></amp-img>
+
+            </div>
+        </div>
     {% block content %}
 
     {% endblock %}

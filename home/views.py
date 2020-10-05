@@ -1,17 +1,21 @@
 from django.shortcuts import render, reverse, redirect
 from .models import Banner, Banner, Contact
 from .forms import ContactForm
-
+from admins.models import Vagas, News
 
 
 
 def homeview(request):
     filter1 = Banner.objects.filter(tipo="INICIAL")
     filter2 = Banner.objects.filter(tipo="ICONS")
+    vagas = Vagas.objects.all()
+    news = News.objects.all()
 
     context = {
         'filter1': filter1,
         'filter2': filter2,
+        'vagas': vagas,
+        'news': news
     }
     if request.user_agent.is_mobile:
         return render(request, 'amp/home.amp.html', context)
@@ -73,6 +77,19 @@ def historyview(request):
 
 def testview(request):
 
+    context = {
+
+    }
+    if request.user_agent.is_mobile:
+        return render(request, 'amp/test.amp.html', context)
+    elif request.user_agent.is_pc:
+        return render(request, 'desktop/test.amp.html', context)
+    else:
+        return render(request, 'desktop/test.amp.html', context)
+
+
+
+def newsview(request):
     context = {
 
     }

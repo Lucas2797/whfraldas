@@ -1,0 +1,101 @@
+{% extends "amp/base.amp.html" %}
+{% load static %}
+{% block title %}
+Contact
+{% endblock %}
+
+{% block content %}
+    <div class="page">
+        <amp-img src="{% static 'contact/banner-contact1.jpg' %}"
+          width="9"
+          height="1.8"
+          layout="responsive"
+          alt="">
+        </amp-img>
+        <div class="title">
+            <h1 class="cont principal home-title center"><span>Contato</span></h1>
+        </div>
+            <div class="contact">
+            <div class="checkbuttons">
+                <!-- VAGAS -->
+                <label class="checkbut" for="toggle1">Vagas</label>
+                <input type="checkbox" on="change:tel.hide, formulario.hide, vagas.show" id="toggle1" class="visually-hidden">
+
+                <!-- TEL -->
+                <label class="checkbut" for="toggle2">Endereço/tel</label>
+                <input type="checkbox" on="change:tel.show, formulario.hide, vagas.hide" id="toggle2"  class="visually-hidden">
+                <!-- FORM -->
+                <label class="checkbut" for="toggle3">Formulário</label>
+                <input type="checkbox" on="change:tel.hide, formulario.show, vagas.hide" id="toggle3" class="visually-hidden">
+
+                
+                <!-- VAGAS -->
+                <div class="contact-text" id="vagas" hidden>
+                    <div class="contacting">
+                        <h1 class="principal">Vagas</h1>
+                        <p>Sem vagas no momento. Por favor deixe seu e-mail e função e caso apareça oportunidade entraremos em contato</p>
+                    </div>
+                </div>
+                <!-- TEL -->
+                <div class="contact-text" id="tel" hidden>
+                    <h1 class="principal">Endereço/tel</h1>
+                    <div class="contacting">
+                        <h4 class="principal">R. Júlio Gradin - Lot. Via Sul, Passo Fundo - RS, 99064-005</h4>
+                        <h4>+55 (54)3317-3999</h4>
+                    </div>
+                </div>
+                <!-- FORM -->
+                <div class="contact-text" id="formulario" hidden>
+                    <h1 class="principal">Formulário</h1>
+                    <form method="POST" action-xhr="{% url 'contact' %}">
+                        {% csrf_token %}
+                        <label for="nome">              
+                            <h3 class="principal">Nome:</h3>
+                            <input class="box-form" name="nome" type="text">
+                        </label>
+                        <label for="phone">
+                            <h3 class="principal">Telefone:</h3>
+                            <input class="box-form" name="phone" type="tel" value="+55(54)" maxlength="14" placeholder="(xx)xxxx-xxxxx">
+                        </label>
+                        <label for="email">
+                            <h3 class="principal">Email:</h3>
+                            <input class="box-form" name="email" type="email" placeholder="xxxxx@email.com">
+                        </label>
+                        <label for="text">
+                            <h3 class="principal">Mensagem:</h3>
+                            <textarea class="box-form" name="text" rows="5" cols="50" placeholder="Em que podemos ser úteis"></textarea>
+                        </label>
+                        <br>
+                        <input type="submit">
+                    </form>
+                </div> 
+                </div>
+            </div>
+
+
+            <!-- <div class="box-form">
+                <form method="POST" action-xhr="{% url 'contact' %}">
+                    {% csrf_token %}
+                    <label for="nome">              
+                        <h3 class="filter-text">Nome:</h3>
+                        <input class="box-form" name="nome" type="text">
+                    </label>
+                    <label for="phone">
+                        <h3 class="filter-text">Telefone:</h3>
+                        <input class="box-form" name="phone" type="tel" value="+5521" maxlength="14" placeholder="(xx)xxxx-xxxxx">
+                    </label>
+                    <label for="email">
+                        <h3 class="filter-text">Email:</h3>
+                        <input class="box-form" name="email" type="email" placeholder="xxxxx@email.com">
+                    </label>
+                    <label for="text">
+                        <h3 class="filter-text">Mensagem:</h3>
+                        <textarea class="box-form" name="text" rows="5" cols="50" placeholder="Em que podemos ser úteis"></textarea>
+                    </label>
+                    <input type="submit">
+                </form>
+            </div> -->
+        </div>
+    </div>
+  
+{% endblock %}
