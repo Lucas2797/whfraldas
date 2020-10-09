@@ -148,7 +148,7 @@
             font-family: 'Grenze Gotisch', cursive;
             list-style: none;
             transition-property:font-size, margin-left, opacity;
-            transition-duration: 0.7s, 0.7s, 0.7s;
+            transition-duration: 0.5s, 0.5s, 0.5s;
         }
 
         li.link:hover{
@@ -164,12 +164,12 @@
         }
         
         div.social{
-            margin-left: 15%;
-            margin-top: 27px;
+            margin-left: 10%;
+            margin-top: 35px;
         }
 
         a.social{
-            margin-left: 30px;
+            margin-left: 20px;
             border-radius: 30%;
             text-decoration: none;
         }
@@ -347,7 +347,7 @@
             border-style: groove;
             border-color: silver;
             box-shadow: 0px 10px 10px 10px rgba(0, 0, 0, 0.2);
-            width: 48%;
+            max-width: 47%;
             float: left;
             background-image: linear-gradient(silver, white, silver);
             padding-bottom: 50px;
@@ -395,11 +395,12 @@
             width: 300px;
             height: 80px;
             text-align: center;
+            opacity: 90%;
             border-width: 5px;
             border-style: groove;
             border-image-source: linear-gradient(45deg, silver, rgb(76, 107, 107));
             border-image-slice: 1;
-            transition-property: border-width, padding, font-size;
+            transition-property: border-width, padding, font-size, opacity;
             transition-duration: 0.5s, 0.5s, 0.5s;
         }
 
@@ -407,6 +408,7 @@
             font-size: 25px;
             border-width: 7px;
             padding: 20px 40px;
+            opacity: 120%;
         }
         /* HOME END */
 
@@ -424,7 +426,7 @@
             margin-left: 150px;
         }
         
-        amp-carousel.carousel2{
+        amp-carousel2{
             margin-top: 50px;
             width: 100%;
         }
@@ -574,20 +576,20 @@
             </ul>
             <div class="social">
                 <a class="social" href="https://www.instagram.com/jr_modas_marica/" target="_blank">
-                    <amp-img class="social-amp-img" src="{% static 'icons/insta-icon.png' %}" width="40" height="40"
+                    <amp-img class="social-amp-img" src="{% static 'icons/insta-icon.png' %}" width="35" height="35"
                         layout="fixed" alt=""> </amp-img>
                 </a>
                 <a class="social" href="https://www.facebook.com/jrmoda" target="_blank">
-                    <amp-img class="social-amp-img" src="{% static 'icons/fb-icon2.png' %}" width="40" height="40"
+                    <amp-img class="social-amp-img" src="{% static 'icons/fb-icon2.png' %}" width="35" height="35"
                         layout="fixed" alt=""></amp-img>
                 </a>
                 <a class="social" href="{% url 'contact' %}" target="_blank">
-                    <amp-img class="social-amp-img" src="{% static 'icons/email-icon6.png' %}" width="40"
-                        height="40" layout="fixed" alt=""> </amp-img>
+                    <amp-img class="social-amp-img" src="{% static 'icons/email-icon6.png' %}" width="35"
+                        height="35" layout="fixed" alt=""> </amp-img>
                 </a>
                 <a class="social" href="{% url 'home' %}" target="_blank">
-                        <amp-img class="social-amp-img" src="{% static 'icons/gear-icon.png' %}" width="40"
-                            height="40" layout="fixed" alt=""> </amp-img>
+                        <amp-img class="social-amp-img" src="{% static 'icons/gear-icon.png' %}" width="35"
+                            height="35" layout="fixed" alt=""> </amp-img>
                 </a>
             </div>
         </nav>

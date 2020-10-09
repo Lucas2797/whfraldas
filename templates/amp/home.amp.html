@@ -5,10 +5,10 @@
 {% endblock title %}
     {% block content %}
     <div class="page">
-        <div class="first">
+        <div class="first" amp-fx="fade-in fly-in-top">
             <amp-carousel lightbox controls autoplay delay="3000" class="carousel1"
             layout="responsive"
-            height="4"
+            height="5"
             width="9"
             type="slides">
             {% for b in filter1 %}
@@ -16,7 +16,7 @@
                 <amp-img src="{{b.get_first_img.imagem.url}}"
                 layout="responsive"
                 width="9"
-                height="3"
+                height="5"
                 alt="Border Collie"></amp-img>
                 <h1>test</h1>
                 <amp-fit-text class="carousel1" layout="responsive"
@@ -30,7 +30,7 @@
             <h1 class="principal home-title"><span>Bem Vindo a WF Fraldas</span></h1>
             <p class="principal">ASOKDODAKODWQOKDQOKDKOWQDKOQKODQOKDQKOD </p>
         </div>
-        <div class="third">
+        <div class="third" amp-fx="fade-in">
             {% for b in filter2 %}
                 <div class="icon">
                     <amp-img class="icon" src="{{b.get_first_img.imagem.url}}"
@@ -46,7 +46,8 @@
                 </div>
             {% endfor %}
         </div>
-        <div class="jobs">
+        <!-- VAGAS -->
+        <div class="jobs" amp-fx="fade-in fly-in-left" data-fly-in-distance="40%" data-duration="2000ms">
             <h1 class="principal center"> Vagas </h1>
             {% for v in vagas %}
             <a class="job" href="{% url 'contact' %}">
@@ -65,5 +66,46 @@
                 </a>
             </div>
         </div>
+        <!-- VAGAS END -->
+        <!-- NEWS -->
+        <div amp-fx="fade-in fly-in-right" data-fly-in-distance="40%" data-duration="2000ms" class="news">
+            <h1 class="principal center"> Notícias </h1>
+                <div class="newing">
+                    {% if news %}
+                        {% for n in news %}
+                            <div class="new">
+                                <amp-carousel lightbox controls width="200"
+                                height="200"
+                                layout="responsive"
+                                type="slides">
+                                {% for p in n.news_images.all %}
+                                <amp-img src="{{ p.imagem.url }}"
+                                    width="200"
+                                    height="200"
+                                    layout="responsive"
+                                    alt=""></amp-img>
+                                {% endfor %}
+                                </amp-carousel>
+                                <a class="new" href="{% url 'news' %}">
+                                    <h2 class="principal center">{{n.headline}}</h2>
+                                    <p>{{n.text|truncatechars:150}}</p>
+                                </a>
+                            </div>
+                        {% endfor %}
+                    {% else %}
+                        <a class="new" href="{% url 'news' %}">
+                            <div class="new">
+                                <h2>Não há notícias no momento.</h2>
+                            </div>
+                        </a>
+                    {% endif %}
+                </div>
+                <div class="see_all center">
+                    <a class="see_all center" href="{% url 'news' %}">
+                        <h2 class="principal">Ver Todas</h2>
+                    </a>
+                </div>
+            </div>
+    <!-- NEWS END -->
 </div>
 {% endblock %}

@@ -5,7 +5,7 @@
 {% endblock title %}
     {% block content %}
     <div class="page">
-        <div class="first">
+        <div class="first" amp-fx="fly-in-top">
             <amp-carousel lightbox controls autoplay delay="3000" class="carousel1"
             layout="responsive"
             height="400"
@@ -15,7 +15,7 @@
             <div class="slide home-title">
                 <amp-img src="{{b.get_first_img.imagem.url}}"
                 layout="fixed"
-                width="400"
+                width="500"
                 height="300"
                 alt="Border Collie"></amp-img>
                 <amp-fit-text class="carousel1" layout="fixed"

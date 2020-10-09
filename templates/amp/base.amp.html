@@ -229,6 +229,11 @@
 
         div.social{
         }
+        
+        a.social{
+            margin-left: 5px;
+            text-decoration: none;
+        }
         /* SIDEBAR END */
         /*Navbar END*/
 
@@ -372,18 +377,18 @@
             border-color: silver;
             box-shadow: 0px 10px 10px 10px rgba(0, 0, 0, 0.2);
             width: 100%;
-            float: left;
             background-image: linear-gradient(silver, white, silver);
             padding-bottom: 100px;
+            margin: auto;
         }
 
         a.job{
             text-decoration: none;
+            color: rgb(0, 0, 0);
         }
 
         div.job{
-            margin-left: 5.5%;
-            width: inherit;
+            margin: auto;
             border-style: groove;
             border-width: 0.2px;
             width: 90%;
@@ -395,44 +400,81 @@
             opacity: 120%;
         }
 
+        
+
+        div.news{
+            margin-top: 30px;
+            border-radius: 10%;
+            border-style: groove;
+            border-color: silver;
+            box-shadow: 0px 10px 10px 10px rgba(0, 0, 0, 0.2);
+            width: 100%;
+            background-image: linear-gradient(silver, white, silver);
+            padding-bottom: 50px;
+        }
+
+        div.newing{
+            width: 90%;
+            margin-left: 7.5%;
+            display: flex;
+        }
+
+        a.new{
+            text-decoration: none;
+            color:rgb(0, 0, 0)
+        }
+
+        div.new{
+            text-align: center;
+            border-style: groove;
+            border-width: 0.2px;
+            width: 50%;
+            background-image: linear-gradient(white, white, silver);
+            opacity: 90%;
+        }
+
+        div.new:hover{
+            opacity: 120%;
+        }
+
+
+
         div.see_all{
+            margin: auto;
             background-color: transparent;
-            width: 100px;
-            height: 50px;
-            margin-top: 10px;
-            margin-left: 35%;
+            margin-top: 20px;
             text-align: center;
             border-width: 5px;
             border-style: solid;
+            width: 50%;
             border-image-source: linear-gradient(45deg, silver, rgb(76, 107, 107));
             border-image-slice: 1;
             transition-property: border-image, border-width, padding;
             transition-delay: 0.5, 0.5, 0.5;
         }
 
-        div.see_all:hover{
-            border-image-source: linear-gradient(45deg, rgb(76, 107, 107), silver);
-            padding: 40px, 50px;
-            border-width: 5px;
-        }
 
         a.see_all{
-            background-color: ;
+            text-decoration: none;
         }
         /* HOME END */
 
         /* PRODUCT  */
 
         div.prod{
-            padding-top: 0px;
             border-top: 0.2px;
+            padding-top: 20px;
+            padding-bottom: 0px;
             border-bottom: 0px;
             border-style: groove;
             border-color: rgb(101, 138, 138);
         }
 
+        div.slide2{
+            text-align: center;
+        }
+
         amp-carousel.carousel2{
-            margin-top: 50px;
             width: 100%;
         }
 
@@ -444,9 +486,10 @@
         }
         
         amp-fit-text.carousel2{
-            position: absolute;
-            margin-left: 200px;
-            margin-top: 40px;
+            top: 0px;
+            margin-top: 0px;
+            text-align: center;
+            width: 100%;
         }
 
         /* PRODUCT END */
@@ -604,6 +647,7 @@
                 </amp-img>
                 <li class="sidebar"><a class="sidebar" href="{% url 'home' %}"><button class="sidebar"><p class="sidebar"> Home </p></button></a></li>
                 <li class="sidebar"><a class="sidebar" href="{% url 'product' %}"><button class="sidebar"><p class="sidebar"> Produtos </p></button></a></li>
+                <li class="sidebar"><a class="sidebar" href="{% url 'news' %}"><button class="sidebar"><p class="sidebar"> Novidades </p></button></a></li>
                 <li class="sidebar"><a class="sidebar" href="{% url 'history' %}"><button class="sidebar"><p class="sidebar"> História </p></button></a></li>
                 <li class="sidebar"><a class="sidebar" href="{% url 'contact' %}"><button class="sidebar"><p class="sidebar"> Contato </p></button></a></li>
                 
