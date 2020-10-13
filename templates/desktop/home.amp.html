@@ -1,72 +1,66 @@
 {% extends 'desktop/base.amp.html' %}
 {% load static %}
 {% block title %}
-    Wf Home
+Wf Home
 {% endblock title %}
-    {% block content %}
-    <div class="page">
-        <div class="first" amp-fx="fly-in-top">
-            <amp-carousel lightbox controls autoplay delay="3000" class="carousel1"
-            layout="responsive"
-            height="400"
-            width="1350"
-            type="slides">
-            {% for b in filter1 %}
-            <div class="slide home-title">
-                <amp-img src="{{b.get_first_img.imagem.url}}"
-                layout="fixed"
-                width="500"
-                height="300"
+{% block content %}
+
+<div class="first" amp-fx="fly-in-top">
+    <amp-carousel lightbox controls autoplay delay="3000" class="carousel1" layout="responsive" height="4"
+        width="17" type="slides">
+        {% for b in filter1 %}
+        <div class="slide home-title">
+            <amp-img class="carousel1" src="{{b.get_first_img.imagem.url}}" layout="fixed" width="500" height="300"
                 alt="Border Collie"></amp-img>
-                <amp-fit-text class="carousel1" layout="fixed"
-                width="400"
-                height="300"><span>{{b.nome}} {{b.text}}</span></amp-fit-text>
+            <amp-fit-text class="carousel1" layout="fixed" width="650" height="300"><span>{{b.nome}} {{b.text}}</span>
+            </amp-fit-text>
+        </div>
+        {% endfor %}
+    </amp-carousel>
+</div>
+<div class="page">
+    <div class="second">
+        <h1 class="principal home-title"><span>Bem Vindo a WF Fraldas</span></h1>
+        <p class="principal">ASOKDODAKODWQOKDQOKDKOWQDKOQKODQOKDQKOD </p>
+    </div>
+    <div amp-fx="fade-in" data-repeat class="third">
+        {% for b in filter2|slice:3 %}
+        <div class="icon">
+            <amp-img class="icon" src="{{b.get_first_img.imagem.url}}" width="170" height="170" layout="fixed" alt="">
+            </amp-img>
+            <div class="icon-text">
+                <h3 class="principal">{{b.nome}}</h3>
+                <p>{{b.text}}</p>
             </div>
-            {% endfor %}
-            </amp-carousel>
         </div>
-        <div class="second">
-            <h1 class="principal home-title"><span>Bem Vindo a WF Fraldas</span></h1>
-            <p class="principal">ASOKDODAKODWQOKDQOKDKOWQDKOQKODQOKDQKOD </p>
-        </div>
-        <div amp-fx="fade-in" data-repeat class="third" >
-            {% for b in filter2|slice:3 %}
-                <div class="icon">
-                    <amp-img class="icon" src="{{b.get_first_img.imagem.url}}"
-                    width="170"
-                    height="170"
-                    layout="fixed"
-                    alt="">
-                    </amp-img>
-                    <div class="icon-text">
-                        <h3 class="principal">{{b.nome}}</h3>
-                        <p>{{b.text}}</p>
-                    </div>
-                </div>
-            {% endfor %}
-        </div>
-<!-- VAGAS -->
+        {% endfor %}
+    </div>
+    <!-- VAGAS -->
+    <div class="fourth">
         <div amp-fx="fade-in fly-in-left" data-fly-in-distance="40%" data-duration="2000ms" class="jobs">
             <h1 class="principal center"> Vagas </h1>
-            
+
             {% if vagas.exists %}
-                {% for v in vagas %}
-                <a class="job" href="{% url 'contact' %}">
-                    <div class="job">
-                        <h2 class="principal center">{{v.position}}</h2>
-                        <h3 class="principal">Descrição</h3>
-                        <p>{{v.description|truncatechars:150}}</p>
-                        <h3 class="principal">Requisitos</h3>
-                        <p>{{v.requirements|truncatechars:150}}</p>
-                    </div>
-                </a>
-                {% endfor %}
+            {% for v in vagas %}
+            <a class="job" href="{% url 'contact' %}">
+                <div class="job">
+                    <h2 class="principal center">{{v.position}}</h2>
+                    <h3 class="principal">Descrição</h3>
+                    <p>{{v.description|truncatechars:150}}</p>
+                    <h3 class="principal">Requisitos</h3>
+                    {% if messages|length >= 150 %}
+                    {% endif %}
+                    <p>{{v.requirements|truncatechars:150}}</p>
+                </div>
+            </a>
+            {% endfor %}
             {% else %}
-                <a class="job" href="{% url 'contact' %}">
-                    <div class="job">
-                        <h2>Não há vagas disponíveis no momento. Se inscriva adicionando sua função e lhe avisaremos assim que houver.</h2>
-                    </div>
-                </a>
+            <a class="job" href="{% url 'contact' %}">
+                <div class="job">
+                    <h2>Não há vagas disponíveis no momento. Se inscriva adicionando sua função e lhe avisaremos assim que
+                        houver.</h2>
+                </div>
+            </a>
             {% endif %}
             <div class="see_all center">
                 <a class="see_all center" href="{% url 'contact' %}">
@@ -74,45 +68,38 @@
                 </a>
             </div>
         </div>
-<!-- VAGAS END -->
-<!-- NEWS -->
+        <!-- VAGAS END -->
+        <!-- NEWS -->
         <div amp-fx="fade-in fly-in-right" data-fly-in-distance="40%" data-duration="2000ms" class="news">
             <h1 class="principal center"> Notícias </h1>
-                <div class="newing">
-                    {% if news %}
-                        {% for n in news %}
-                            <div class="new">
-                                <amp-carousel width="200"
-                                height="200"
-                                layout="fixed"
-                                type="slides">
-                                {% for p in n.news_images.all %}
-                                <amp-img src="{{ p.imagem.url }}"
-                                    width="200"
-                                    height="200"
-                                    layout="fixed"
-                                    alt=""></amp-img>
-                                {% endfor %}
-                                </amp-carousel>
-                                <h2 class="principal center">{{n.headline}}</h2>
-                                <p>{{n.text|truncatechars:150}}</p>
-                            </div>
+            <div class="newing">
+                {% if news %}
+                {% for n in news|slice:2 %}
+                <div class="new">
+                    <amp-carousel width="200" height="200" layout="fixed" type="slides">
+                        {% for p in n.news_images.all %}
+                        <amp-img src="{{ p.imagem.url }}" width="200" height="200" layout="fixed" alt=""></amp-img>
                         {% endfor %}
-                    {% else %}
-                        <a class="new" href="{% url 'news' %}">
-                            <div class="new">
-                                <h2>Não há notícias no momento.</h2>
-                            </div>
-                        </a>
-                    {% endif %}
+                    </amp-carousel>
+                    <h2 class="principal center">{{n.headline}}</h2>
+                    <p>{{n.text|truncatechars:150}}</p>
                 </div>
-                <div class="see_all center">
-                    <a class="see_all center" href="{% url 'news' %}">
-                        <h2 class="principal">Ver Todas</h2>
-                    </a>
-                </div>
+                {% endfor %}
+                {% else %}
+                <a class="new" href="{% url 'news' %}">
+                    <div class="new">
+                        <h2>Não há notícias no momento.</h2>
+                    </div>
+                </a>
+                {% endif %}
             </div>
+            <div class="see_all center">
+                <a class="see_all center" href="{% url 'news' %}">
+                    <h2 class="principal">Ver Todas</h2>
+                </a>
+            </div>
+        </div>
+    </div>
     <!-- NEWS END -->
-        </div>
-        </div>
+</div>
 {% endblock %}

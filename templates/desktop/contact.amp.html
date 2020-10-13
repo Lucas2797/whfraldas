@@ -47,27 +47,11 @@ Contact
                 <!-- FORM -->
                 <div class="contact-text" id="formulario" hidden>
                     <h1 class="principal">Formulário</h1>
-                    <form method="POST" action-xhr="{% url 'contact' %}">
+                    <form method="POST" action-xhr="http://wfraldas.herokuapp.com/home/contact/" target="_top">
                         {% csrf_token %}
-                        <label for="nome">              
-                            <h3 class="principal">Nome:</h3>
-                            <input class="box-form" name="nome" type="text">
-                        </label>
-                        <label for="phone">
-                            <h3 class="principal">Telefone:</h3>
-                            <input class="box-form" name="phone" type="tel" value="+55(54)" maxlength="14" placeholder="(xx)xxxx-xxxxx">
-                        </label>
-                        <label for="email">
-                            <h3 class="principal">Email:</h3>
-                            <input class="box-form" name="email" type="email" placeholder="xxxxx@email.com">
-                        </label>
-                        <label for="text">
-                            <h3 class="principal">Mensagem:</h3>
-                            <textarea class="box-form" name="text" rows="5" cols="50" placeholder="Em que podemos ser úteis"></textarea>
-                        </label>
-                        <br>
-                        <input type="submit">
+                        {{form.as_p}}
                     </form>
+                    <input type="submit">
                 </div> 
                 </div>
             </div>

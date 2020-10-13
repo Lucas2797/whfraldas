@@ -15,7 +15,7 @@
             <div class="slide home-title">
                 <amp-img src="{{b.get_first_img.imagem.url}}"
                 layout="responsive"
-                width="9"
+                width="8"
                 height="5"
                 alt="Border Collie"></amp-img>
                 <h1>test</h1>
@@ -72,7 +72,7 @@
             <h1 class="principal center"> Notícias </h1>
                 <div class="newing">
                     {% if news %}
-                        {% for n in news %}
+                        {% for n in news|slice:2 %}
                             <div class="new">
                                 <amp-carousel lightbox controls width="200"
                                 height="200"

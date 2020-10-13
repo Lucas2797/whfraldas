@@ -90,12 +90,13 @@ def testview(request):
 
 
 def newsview(request):
+    news = News.objects.all()
     context = {
-
+        'news': news,
     }
     if request.user_agent.is_mobile:
-        return render(request, 'amp/test.amp.html', context)
+        return render(request, 'amp/news.amp.html', context)
     elif request.user_agent.is_pc:
-        return render(request, 'desktop/test.amp.html', context)
+        return render(request, 'desktop/news.amp.html', context)
     else:
-        return render(request, 'desktop/test.amp.html', context)
+        return render(request, 'desktop/news.amp.html', context)

@@ -1,38 +1,38 @@
-{% extends "desktop/base.amp.html" %}
+{% extends "amp/base.amp.html" %}
 {% load static %}
 
 
 {% block content %}
 
 <amp-img src="{% static 'home/banner_news.jpg' %}"
-  width="8"
-  height="2"
-  layout="responsive"
-  class="banner-new"
-  alt="">
+width="5"
+height="2"
+layout="responsive"
+class="banner"
+alt="">
 </amp-img>
 <div class="title">
-    <h1 class="principal home-title center cont"><span>Novidades</span></h1>
+    <h1 class="principal home-title center"><span> Novidades</span></h1>
 </div>
 <div class="page">
-    <div class="newing_news" amp-fx="fly-in-top fade-in">
+    <div class="newing_news">
         {% if news %}
             {% for n in news %}
-                <div class="new">
-                    <amp-carousel width="400"
-                    height="400"
+                <div class="news2">
+                    <amp-carousel width="300"
+                    height="300"
                     layout="fixed"
                     type="slides">
                     {% for p in n.news_images.all %}
                     <amp-img src="{{ p.imagem.url }}"
                         width="400"
-                        height="400"
+                        height="300"
                         layout="fixed"
                         alt=""></amp-img>
                     {% endfor %}
                     </amp-carousel>
-                    <h2 class="principal center new">{{n.headline}}</h2>
-                    <p class="new">{{n.text|truncatechars:150}}</p>
+                    <h2 class="principal center">{{n.headline}}</h2>
+                    <p>{{n.text|truncatechars:150}}</p>
                 </div>
             {% endfor %}
         {% else %}

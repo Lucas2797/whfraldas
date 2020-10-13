@@ -14,6 +14,7 @@
     <script async custom-element="amp-fit-text" src="https://cdn.ampproject.org/v0/amp-fit-text-0.1.js"></script>
     <script async custom-element="amp-selector" src="https://cdn.ampproject.org/v0/amp-selector-0.1.js"></script>
     <script async custom-element="amp-bind" src="https://cdn.ampproject.org/v0/amp-bind-0.1.js"></script>
+    <script async custom-element="amp-form" src="https://cdn.ampproject.org/v0/amp-form-0.1.js"></script>
     <script async custom-element="amp-lightbox-gallery"
         src="https://cdn.ampproject.org/v0/amp-lightbox-gallery-0.1.js"></script>
     <script async custom-element="amp-iframe" src="https://cdn.ampproject.org/v0/amp-iframe-0.1.js"></script>
@@ -96,6 +97,7 @@
 
 
         body {
+            background-color: rgba(101, 138, 138, 1);
         }
 
         /* Header */
@@ -180,19 +182,29 @@
         /* Header END */
         div.page{
             margin-top: 100px;
+            background-color: white;
+            width: 92%;
+            border-style: groove;
+            border-color: rgba(101, 138, 138, 0.7);
+            margin-left: 4%;
+            box-shadow: 5px 5px 5px 5px rgba(0, 0, 0, 0.2);
         }
         /* Texts  */
         .principal{
+            margin-top: 0px;
             color: rgba(187, 248, 248, 0.363);
             text-shadow: 2px 2px rgba(0, 0, 0, 0.9);
         }
 
 
         div.title{
+            margin-top: 0px;
+            top: 0px;
             width: 100%;
             height: 50px;
             box-shadow: 5px 5px 5px 5px rgba(0, 0, 0, 0.2);
             text-align: center;
+            background-image: linear-gradient(silver, white, silver);
         }
 
         .center{
@@ -259,6 +271,7 @@
 
         /* HOME */
         div.first {
+            margin-top: 100px;
             background: linear-gradient(45deg, #444 7.14%, rgba(187, 248, 248, 0.363) 7.14%, rgba(187, 248, 248, 0.363) 50%, #444 50%, #444 57.14%, rgba(187, 248, 248, 0.363) 57.14%, rgba(187, 248, 248, 0.363) 100%);
             background-size: 9.9px 9.9px;
             width: 100%;
@@ -266,8 +279,10 @@
             box-shadow: 5px 5px 5px 5px rgba(0, 0, 0, 0.2);
         }
 
+        amp-img{}
+
         div.slide{
-            margin-left: 250px;
+            margin-left: 100px;
         }
 
         amp-carousel.carousel1{
@@ -276,10 +291,11 @@
         }
 
         amp-fit-text.carousel1{
+            text-align: center;
             font-size: 40px;
             color: black;
-            background: linear-gradient(90deg, rgba(250, 250, 250, 0.063), white, rgba(250, 250, 250, 0.063));
-            margin-left: 80px;
+            background: linear-gradient(90deg, rgba(250, 250, 250, 0.023), white, rgba(250, 250, 250, 0.023));
+            margin-left: 40px;
         }
 
         div.second{
@@ -287,6 +303,8 @@
             text-align: center;
             height: 100px;
             bottom: 0;
+            margin-top: 0px;
+            top: 0px;
         }
 
         div.third{
@@ -295,27 +313,32 @@
         }
 
         div.icon{
-            margin-left: 6%;
+            margin-left: 5.2%;
         }
 
         div.icon-text{
             text-align: center;
             width: 350px;
-            margin-left: 20px;
+            margin-left: 0%;
         }
 
         amp-img.icon{
-            margin-left: 35%;
+            margin-left: 25%;
+        }
+
+        div.fourth{
+            display: flex;
         }
 
 
         div.jobs{
-            margin-left: 30px;
+            margin-left: 50px;
             border-radius: 10%;
             border-style: groove;
             border-color: silver;
+            height: auto;
             box-shadow: 0px 10px 10px 10px rgba(0, 0, 0, 0.2);
-            width: 45%;
+            width: 44%;
             float: left;
             background-image: linear-gradient(silver, white, silver);
             padding-bottom: 50px;
@@ -341,13 +364,17 @@
         }
 
 
+        div.newing_news{
+            display: flex;
+        }
+
         div.news{
-            margin-left: 55px;
+            margin-left: 30px;
             border-radius: 10%;
             border-style: groove;
             border-color: silver;
             box-shadow: 0px 10px 10px 10px rgba(0, 0, 0, 0.2);
-            max-width: 47%;
+            max-width: 46%;
             float: left;
             background-image: linear-gradient(silver, white, silver);
             padding-bottom: 50px;
@@ -357,6 +384,11 @@
             width: 90%;
             margin-left: 7.5%;
             display: flex;
+            flex-wrap: wrap;
+        }
+        
+        .newing>div{
+            flex: 0 46%;
         }
 
         a.new{
@@ -368,7 +400,7 @@
             text-align: center;
             border-style: groove;
             border-width: 0.2px;
-            width: 47%;
+            width: 48%;
             height: 400px;
             background-image: linear-gradient(white, white, silver);
             opacity: 90%;
@@ -515,6 +547,7 @@
         }
 
         div.contact-text{
+            margin-top: 50px;
             text-align: center;
         }
 
@@ -524,6 +557,18 @@
 
 
         /* CONTACT END */
+        
+        /* NEWS */
+        h2.new{
+            background-color: rgba(255, 255, 255, 0.9);
+        }
+
+        p.new{
+            background-color: rgba(255, 255, 255, 0.9);
+        }
+
+
+        /* NEWS END */
 
         /* FOOTER  */
 
@@ -546,7 +591,6 @@
             height: 300px;
             background-color: blue;
         }
-
 
 
         a.footer{
@@ -609,7 +653,7 @@
                     © C2View
                 </small>
             </a>
-            <amp-iframe width="1400" height="300"
+            <amp-iframe width="1500" height="300"
             sandbox="allow-scripts allow-same-origin"
             layout="fixed"
             frameborder="0"
