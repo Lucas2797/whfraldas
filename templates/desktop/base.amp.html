@@ -23,6 +23,9 @@
     
     <!-- GOOGLE FONTS -->
     <link href="https://fonts.googleapis.com/css2?family=Grenze+Gotisch:wght@700&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@300;400&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Patua+One&display=swap" rel="stylesheet">
+
     <!-- ICON -->
     <link rel="icon" href="{% static 'icons/icon3.png' %}">
     <style amp-boilerplate>
@@ -112,13 +115,14 @@
             width: 100%;
         }
 
+        
 
         div.logo{
+            top: 0px;
+            margin-left: 50px;
             width: 230px;
             height: 90px;
-            margin-left: 40px;
-            margin-top: 8px;
-            padding-right: 0px;
+            padding-bottom: 0px;
             background-image: url("{% static 'icons/whf-pronto-transparent1.png' %}");
             background-repeat: no-repeat;
             background-size: cover;
@@ -136,15 +140,38 @@
 
 
         ul.link {
+            margin-left: 30px;
             list-style: georgian;
         }
 
+        ul.link2{
+            margin-left: 0px;
+        }
+
         li.link {
+            margin-top: 0px;
             float: left;
-            margin-top: 13px;
-            top: 0;
             font-size: 33px;
-            margin-left: 10px;
+            margin-left: 25px;
+            margin-right: 20px;
+            text-decoration: none;
+            font-family: 'Grenze Gotisch';
+            list-style: none;
+            transition-property:font-size, margin-left, opacity;
+            transition-duration: 0.5s, 0.5s, 0.5s;
+        }
+
+        li.link:hover{
+            font-size: 35px;
+            margin-left: 15px;
+            opacity: 80%;
+        }
+
+        li.link2 {
+            margin-top: 0px;
+            float: left;
+            font-size: 33px;
+            margin-left: 20px;
             margin-right: 20px;
             text-decoration: none;
             font-family: 'Grenze Gotisch', cursive;
@@ -153,9 +180,9 @@
             transition-duration: 0.5s, 0.5s, 0.5s;
         }
 
-        li.link:hover{
+        li.link2:hover{
             font-size: 35px;
-            margin-left: 11px;
+            margin-left: 30px;
             opacity: 80%;
         }
 
@@ -164,24 +191,14 @@
             color: rgba(187, 248, 248, 0.363);
             text-shadow: 2px 2px rgb(0, 0, 0);
         }
-        
-        div.social{
-            margin-left: 8%;
-            margin-top: 35px;
-        }
-
-        a.social{
-            margin-left: 13px;
-            border-radius: 30%;
-            text-decoration: none;
-        }
-        
-        a.social:hover{
-        }
 
         /* Header END */
+        div.nav{
+            border-style: groove;
+            border-color: rgb(101, 138, 138);
+        }
         div.page{
-            margin-top: 100px;
+            margin-top: 80px;
             background-color: white;
             width: 92%;
             border-style: groove;
@@ -198,6 +215,9 @@
 
 
         div.title{
+            border-style: groove;
+            border-color: rgba(101, 138, 138, 0.7);
+            border-left: 0px;
             margin-top: 0px;
             top: 0px;
             width: 100%;
@@ -212,6 +232,11 @@
         }
         /* title styles */
 
+        .cursive{
+            font-family: 'Patua One', cursive;
+        }
+
+
         :root{
             --bg-color: rgb(76, 107, 107);
         }
@@ -222,6 +247,7 @@
             display: block;
             line-height: 1.2;
         }
+        
 
         .home-title span::after{
             content: '';
@@ -275,36 +301,40 @@
             background: linear-gradient(45deg, #444 7.14%, rgba(187, 248, 248, 0.363) 7.14%, rgba(187, 248, 248, 0.363) 50%, #444 50%, #444 57.14%, rgba(187, 248, 248, 0.363) 57.14%, rgba(187, 248, 248, 0.363) 100%);
             background-size: 9.9px 9.9px;
             width: 100%;
-            height: 300px;
+            max-height: 300px;
             box-shadow: 5px 5px 5px 5px rgba(0, 0, 0, 0.2);
+            border-style: groove;
         }
 
-        amp-img{}
-
-        div.slide{
-            margin-left: 100px;
-        }
-
+        
         amp-carousel.carousel1{
             background: fixed;
             width: 100%;
         }
+        div.slide{
+            width: 100%;
+            height: 305px;
+            background: linear-gradient(90deg, rgba(250, 250, 250, 0.05), rgba(250, 250, 250, 1), rgba(250, 250, 250, 0.85));
+        }
+
+        amp-img.carousel1{
+            margin-left: 0px;
+            z-index: -1;
+            -webkit-mask-image:-webkit-gradient(linear, left top, right bottom, from(rgba(0,0,0,2)), to(rgba(0,0,0,0.5)));
+            mask-image: linear-gradient(to bottom, rgba(0,0,0,1), rgba(0,0,0,1));
+        }
 
         amp-fit-text.carousel1{
+            padding-left: 0px;
             text-align: center;
-            font-size: 40px;
-            color: black;
-            background: linear-gradient(90deg, rgba(250, 250, 250, 0.023), white, rgba(250, 250, 250, 0.023));
-            margin-left: 40px;
         }
 
         div.second{
+            margin-top: 0px;
             width: 100%;
             text-align: center;
-            height: 300px;
-            bottom: 0;
-            margin-top: 0px;
-            top: 0px;
+            height: 200px;
+            padding-bottom: 0px;
         }
 
         div.third{
@@ -313,7 +343,7 @@
         }
 
         div.icon{
-            margin-left: 5.2%;
+            margin-left: 3.5%;
         }
 
         div.icon-text{
@@ -332,7 +362,7 @@
 
 
         div.jobs{
-            margin-left: 50px;
+            margin-left: 40px;
             border-radius: 10%;
             border-style: groove;
             border-color: silver;
@@ -412,34 +442,36 @@
 
 
         div.see_all{
+            margin: auto;
             background-color: transparent;
-            width: 100%;
+            margin-top: 20px;
+            text-align: center;
+            border-width: 5px;
+            border-style: solid;
+            width: 40%;
+            border-image-source: linear-gradient(45deg, silver, rgb(76, 107, 107));
+            border-image-slice: 1;
+            transition-property: border-image, border-width;
+            transition-delay: 0.5, 0.5, 0.5;
         }
 
         div.see_all:hover{
-
+            border-width: 6px;
         }
 
         a.see_all{
-            margin-top: 50px;
+            text-align: center;
+            margin-top: 90px;
             text-decoration: none;
             font-size: 20px;
-            width: 300px;
-            height: 80px;
-            text-align: center;
             opacity: 90%;
-            border-width: 5px;
-            border-style: groove;
-            border-image-source: linear-gradient(45deg, silver, rgb(76, 107, 107));
-            border-image-slice: 1;
-            transition-property: border-width, padding, font-size, opacity;
+            transition-property:padding, font-size, opacity;
             transition-duration: 0.5s, 0.5s, 0.5s;
+            padding-bottom: 0px;
         }
 
         a.see_all:hover{
             font-size: 25px;
-            border-width: 7px;
-            padding: 20px 40px;
             opacity: 120%;
         }
         /* HOME END */
@@ -456,6 +488,7 @@
 
         div.slide2{
             margin-left: 150px;
+            margin-bottom: 30px;
         }
         
         amp-carousel2{
@@ -472,7 +505,7 @@
         
         amp-fit-text.carousel2{
             position: absolute;
-            margin-left: 200px;
+            margin-left: 150px;
             margin-top: 40px;
         }
 
@@ -509,9 +542,10 @@
         }
 
         div.checkbuttons{
-            margin-top: 50px;
+            margin-top: 100px;
             align-items: center;
             text-align: center;
+            padding-bottom: 50px;
         }
 
         .control-me::after {
@@ -561,10 +595,16 @@
         /* NEWS */
         h2.new{
             background-color: rgba(255, 255, 255, 0.9);
+            border-style: groove;
+            border-color: rgba(101, 138, 138, 0.6);
+            padding-bottom: 0px;
         }
 
         p.new{
+            padding-bottom: 0px;
             background-color: rgba(255, 255, 255, 0.9);
+            border-style: groove;
+            border-color: rgba(101, 138, 138, 0.6);
         }
 
 
@@ -604,38 +644,22 @@
 </head>
 
     <body>
-    <div>
+    <div class="nav">
         <nav amp-fx="float-in-top">               
-            
-            <a class="logo" href="{% url 'home' %}">
-                <div class="logo">
-                </div>
-            </a>
             <ul class="link">
                 <li class="link"><a class="link" href="{% url 'home' %}">Home</a></li>
                 <li class="link"><a class="link" href="{% url 'product' %}">Produto</a></li>
                 <li class="link"><a class="link" href="{% url 'news' %}">Novidades</a></li>
-                <li class="link"><a class="link" href="{% url 'history' %}">História</a></li>
-                <li class="link"><a class="link" href="{% url 'contact' %}">Contato</a></li>
             </ul>
-            <div class="social">
-                <a class="social" href="https://www.instagram.com/jr_modas_marica/" target="_blank">
-                    <amp-img class="social-amp-img" src="{% static 'icons/insta-icon.png' %}" width="35" height="35"
-                        layout="fixed" alt=""> </amp-img>
-                </a>
-                <a class="social" href="https://www.facebook.com/jrmoda" target="_blank">
-                    <amp-img class="social-amp-img" src="{% static 'icons/fb-icon2.png' %}" width="35" height="35"
-                        layout="fixed" alt=""></amp-img>
-                </a>
-                <a class="social" href="{% url 'contact' %}" target="_blank">
-                    <amp-img class="social-amp-img" src="{% static 'icons/email-icon6.png' %}" width="35"
-                        height="35" layout="fixed" alt=""> </amp-img>
-                </a>
-                <a class="social" href="{% url 'home' %}" target="_blank">
-                        <amp-img class="social-amp-img" src="{% static 'icons/gear-icon.png' %}" width="35"
-                            height="35" layout="fixed" alt=""> </amp-img>
-                </a>
-            </div>
+            <a class="logo" href="{% url 'home' %}">
+                <div class="logo">
+                    </div>
+            </a>
+            <ul class="link2">
+                <li class="link2"><a class="link" href="{% url 'contact' %}">Vagas</a></li>
+                <li class="link2"><a class="link" href="{% url 'history' %}">História</a></li>
+                <li class="link2"><a class="link" href="{% url 'contact' %}">Contato</a></li>
+            </ul>
         </nav>
     </div>
 

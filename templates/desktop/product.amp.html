@@ -16,13 +16,13 @@
             {% for i in p.banner_images.all %}
             <div class="slide2">
                 <amp-img src="{{i.imagem.url}}"
-                width="450"
-                height="400"
+                width="470"
+                height="450"
                 layout="fixed"
                 alt=""></amp-img>
                 <amp-fit-text class="carousel2" layout="fixed"
                 width="400"
-                height="300"><h1 class="product principal home-title"><span>{{p.nome}}</span></h1><p class="product principal home-title"><span>{{i.image_text}}</span></p></amp-fit-text>
+                height="300"><h1 class="product principal home-title cursive"><span class="cursive">{{p.nome}}</span></h1><p class="product principal cursive home-title"><span>{{i.image_text}}</span></p></amp-fit-text>
             </div>
             {% endfor %}
             </amp-carousel>

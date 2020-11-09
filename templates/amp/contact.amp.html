@@ -27,7 +27,7 @@ Contact
                 <!-- FORM -->
                 <label class="checkbut" for="toggle3">Formulário</label>
                 <input type="checkbox" on="change:tel.hide, formulario.show, vagas.hide" id="toggle3" class="visually-hidden">
-
+                
                 
                 <!-- VAGAS -->
                 <div class="contact-text" id="vagas" hidden>
@@ -44,6 +44,16 @@ Contact
                         <h4>+55 (54)3317-3999</h4>
                     </div>
                 </div>
+                
+                {% if form.errors %}
+                    <h1>{{form.errors}}</h1>
+                    <!-- {% for field in form.errors %}
+                        <h1>{{field}}</h1>
+                    {% endfor %} -->
+                        
+                {% endif %}
+                    
+
                 <!-- FORM -->
                 <div class="contact-text" id="formulario" hidden>
                     <h1 class="principal">Formulário</h1>
@@ -55,7 +65,9 @@ Contact
                         </label>
                         <label for="phone">
                             <h3 class="principal">Telefone:</h3>
-                            <input class="box-form" name="phone" type="tel" value="+55(54)" maxlength="14" placeholder="(xx)xxxx-xxxxx">
+                            <span>ex:(+55542199)</span>
+                            <br>
+                            <input class="box-form" name="phone" type="tel" maxlength="14" placeholder="+xx(xx)xxxx-xxxxx">
                         </label>
                         <label for="email">
                             <h3 class="principal">Email:</h3>
@@ -68,6 +80,26 @@ Contact
                         <br>
                         <input type="submit">
                     </form>
+                    
+                    <form action="">
+  
+                        <div>
+                          <label for="cc">Expiration Date</label>
+                          <!-- Set via HTML -->
+                          <input id="cc" type="text" placeholder="MM/YY" class="masked" pattern="(1[0-2]|0[1-9])\/(1[5-9]|2\d)" data-valid-example="05/18"/>
+                        </div>
+                        
+                        <div>
+                          <label for="czc">Canadian Zip Code</label>
+                          <input id="czc" placeholder="XXX XXX" pattern="\w\d\w \d\w\d" class="masked" 
+                              data-charset="_X_ X_X" id="zipca" type="text" name="zipcodeca" 
+                              title="6-character alphanumeric zip code in the format of A1A 1A1" />
+                        </div>
+                      
+                      </form>
+                      
+                      <script src="https://s3-us-west-2.amazonaws.com/s.cdpn.io/3/masking-input.js" data-autoinit="true"></script>
+
                 </div> 
                 </div>
             </div>

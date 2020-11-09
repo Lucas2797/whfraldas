@@ -6,9 +6,9 @@
         <h1 class="principal home-title center"><span>Produtos</span></h1>
     </div>
     {% for p in filter1 %}
-        <div class="prod" amp-fx="fly-in-left" data-fly-in-distance="20%" data-duration="1000ms">
-            <amp-carousel controls width="2"
-            height="3.5"
+        <div class="prod" amp-fx="fly-in-left" data-fly-in-distance="40%" data-duration="2000ms">
+            <amp-carousel width="1"
+            height="1.5"
             layout="responsive"
             type="slides"
             class="carousel2"
@@ -16,13 +16,14 @@
             {% for i in p.banner_images.all %}
             <div class="slide2">
                 <amp-img src="{{i.imagem.url}}"
-                width="250"
-                height="250"
-                layout="fixed"
+                class="carousel2"
+                width="2"
+                height="1.5"
+                layout="responsive"
                 alt=""></amp-img>
                 <amp-fit-text class="carousel2" layout="responsive"
-                width="2"
-                height="2"><h1 class="product principal home-title"><span>{{p.nome}}</span></h1><p class="product principal home-title"><span>{{i.image_text}}</span></p></amp-fit-text>
+                width="1"
+                height="0.85"><h1 class="product principal home-title cursive"><span class="cursive">{{p.nome}}</span></h1><p class="product principal cursive home-title"><span>{{i.image_text}}</span></p></amp-fit-text>
             </div>
             {% endfor %}
             </amp-carousel>

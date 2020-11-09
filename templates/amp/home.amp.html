@@ -1,14 +1,14 @@
 {% extends 'amp/base.amp.html' %}
 {% load static %}
 {% block title %}
-    Wf Home
+    Whf Home
 {% endblock title %}
     {% block content %}
     <div class="page">
         <div class="first" amp-fx="fade-in fly-in-top">
             <amp-carousel lightbox controls autoplay delay="3000" class="carousel1"
             layout="responsive"
-            height="5"
+            height="8"
             width="9"
             type="slides">
             {% for b in filter1 %}
@@ -16,19 +16,23 @@
                 <amp-img src="{{b.get_first_img.imagem.url}}"
                 layout="responsive"
                 width="8"
-                height="5"
+                height="3.7"
                 alt="Border Collie"></amp-img>
-                <h1>test</h1>
-                <amp-fit-text class="carousel1" layout="responsive"
-                width="200"
-                height="900"><span>{{b.nome}} {{b.text}}</span></amp-fit-text>
+                <amp-fit-text class="carousel1 cursive principal home-title center" layout="responsive"
+                width="8"
+                height="4"><span><h2 class="carousel1 principal">{{b.nome}}</h2><p class="principal">{{b.text}}</p></span></amp-fit-text>
             </div>
             {% endfor %}
             </amp-carousel>
         </div>
         <div class="second">
-            <h1 class="principal home-title"><span>Bem Vindo a WF Fraldas</span></h1>
-            <p class="principal">ASOKDODAKODWQOKDQOKDKOWQDKOQKODQOKDQKOD </p>
+            <h1 class="principal home-title cursive"><span>Bem Vindo a WHF Fraldas</span></h1>
+            <p class="principal cursive">Localizada em passo fundo a WHF é uma empresa nacional,<br> 
+                focada no desenvolvimento e produção de fraldas descartáveis. <br> 
+            gostaria de saber mais?:</p>
+            <div class="see_all">
+                <a href="{% url 'history' %}" class="see_all"><h2 class="cursive principal">História</h2></a>
+            </div>
         </div>
         <div class="third" amp-fx="fade-in">
             {% for b in filter2 %}
@@ -62,7 +66,7 @@
             {% endfor %}
             <div class="see_all">
                 <a class="see_all" href="{% url 'contact' %}">
-                    <h2 class="principal">Ver Todas</h2>
+                    <h2 class="cursive principal">Ver Todas</h2>
                 </a>
             </div>
         </div>
@@ -102,7 +106,7 @@
                 </div>
                 <div class="see_all center">
                     <a class="see_all center" href="{% url 'news' %}">
-                        <h2 class="principal">Ver Todas</h2>
+                        <h2 class="principal cursive">Ver Todas</h2>
                     </a>
                 </div>
             </div>

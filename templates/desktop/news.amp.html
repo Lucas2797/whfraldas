@@ -3,18 +3,11 @@
 
 
 {% block content %}
-
-<amp-img src="{% static 'home/banner_news.jpg' %}"
-  width="8"
-  height="2"
-  layout="responsive"
-  class="banner-new"
-  alt="">
-</amp-img>
-<div class="title">
-    <h1 class="principal home-title center cont"><span>Novidades</span></h1>
-</div>
 <div class="page">
+
+    <div class="title">
+        <h1 class="principal home-title center cont"><span>Novidades</span></h1>
+    </div>
     <div class="newing_news" amp-fx="fly-in-top fade-in">
         {% if news %}
             {% for n in news %}
