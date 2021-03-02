@@ -1,15 +1,39 @@
 {% extends "desktop/base.amp.html" %}
-{% load static %}
 
 {% block content %}
     <div class="page">
-      <h1 class="principal center">Desculpe, página em desenvolvimento.</h1>
-      <amp-img class="center" src="{% static 'home/images.png' %}"
-        width="200"
-        height="200"
-        layout="fixed"
-        alt="">
-      </amp-img>
+    <div class="title">
+        <h1 class="principal home-title center"><span>Empresa</span></h1>
+    </div>
+    {% for p in filter1 %}
+      
+      {% if p.get_prim %}
+        <div class="prod" amp-fx="fly-in-right" data-fly-in-distance="40%" data-duration="2000ms">
+      {% else %}
+        <div class="prod" amp-fx="fly-in-left" data-fly-in-distance="40%" data-duration="2000ms">
+      {% endif %}
+            <amp-carousel width="10"
+            height="3"
+            layout="responsive"
+            type="slides"
+            class="carousel2"
+            lightbox delay="3000">
+            {% for i in p.banner_images.all %}
+            <div class="slide2">
+                <amp-img src="{{i.imagem.url}}"
+                width="470"
+                height="450"
+                layout="fixed"
+                alt=""></amp-img>
+                <amp-fit-text class="carousel2" layout="fixed"
+                width="400"
+                height="300"><h1 class="product principal home-title cursive"><span class="cursive">{{p.nome}}</span></h1><p class="product principal cursive home-title"><span>{{i.image_text}}</span></p></amp-fit-text>
+            </div>
+            {% endfor %}
+            </amp-carousel>
+        </div>
+      
+        {% endfor %}
 
     </div>
 {% endblock %}

@@ -7,11 +7,13 @@ from .managers import BannerManager
 INICIAL= 'INICIAL'
 ICONS = 'ICONS'
 PRODUTO = 'PRODUTO'
+EMPRESA = 'EMPRESA'
 
 banner_choices = [
         (INICIAL, 'INICIAL'),
         (ICONS, 'ICONS'),
-        (PRODUTO, 'PRODUTO')
+        (PRODUTO, 'PRODUTO'),
+        (EMPRESA, 'EMPRESA'),
     ]
 
 
@@ -29,6 +31,11 @@ class Banner(models.Model):
 
     def get_first_img(self):
         return self.banner_images.first()
+
+    @property
+    def get_prim(self):
+        if self.id % 2 == 0:
+            return True
 
 
 def get_image_filename(instance, filename):

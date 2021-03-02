@@ -18,13 +18,17 @@
     <script async custom-element="amp-lightbox-gallery"
         src="https://cdn.ampproject.org/v0/amp-lightbox-gallery-0.1.js"></script>
     <script async custom-element="amp-iframe" src="https://cdn.ampproject.org/v0/amp-iframe-0.1.js"></script>
-    <script async custom-element="amp-fx-collection" src="https://cdn.ampproject.org/v0/amp-fx-collection-0.1.js"></script>
-    
-    
+    <script async custom-element="amp-fx-collection"
+        src="https://cdn.ampproject.org/v0/amp-fx-collection-0.1.js"></script>
+
+
     <!-- GOOGLE FONTS -->
     <link href="https://fonts.googleapis.com/css2?family=Grenze+Gotisch:wght@700&display=swap" rel="stylesheet">
     <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@300;400&display=swap" rel="stylesheet">
     <link href="https://fonts.googleapis.com/css2?family=Patua+One&display=swap" rel="stylesheet">
+    <link rel="preconnect" href="https://fonts.gstatic.com">
+    <link href="https://fonts.googleapis.com/css2?family=Bree+Serif&display=swap" rel="stylesheet">
+
 
     <!-- ICON -->
     <link rel="icon" href="{% static 'icons/icon3.png' %}">
@@ -97,8 +101,6 @@
         </style>
     </noscript>
     <style amp-custom>
-
-
         body {
             background-color: rgba(101, 138, 138, 1);
         }
@@ -115,13 +117,24 @@
             width: 100%;
         }
 
-        
+        div.loging {
+            width: 130px;
+            margin-top: 0%;
+            margin-left: 14%;
 
-        div.logo{
-            top: 0px;
-            margin-left: 50px;
+        }
+
+        @media(max-width:1100px) {
+            div.loging {
+                margin-left: 17%;
+                width: 90px;
+            }
+        }
+
+        div.logo {
             width: 230px;
-            height: 90px;
+            height: 100px;
+            padding-left: 0px;
             padding-bottom: 0px;
             background-image: url("{% static 'icons/whf-pronto-transparent1.png' %}");
             background-repeat: no-repeat;
@@ -131,73 +144,122 @@
             transition-duration: 0.5s, 0.5s, 0.5s;
         }
 
-        div.logo:hover{
+
+        div.logo:hover {
             width: 250px;
             height: 100px;
             opacity: 150%;
         }
 
-
-
-        ul.link {
-            margin-left: 30px;
+        ul.link1 {
+            margin-left: -40px;
+            width: 25%;
             list-style: georgian;
+            display: inline-flex;
         }
 
-        ul.link2{
-            margin-left: 0px;
+        @media(max-width:1100px) {
+            ul.link1 {
+                margin-left: -50px;
+                width: 20%;
+            }
+
         }
 
-        li.link {
-            margin-top: 0px;
+
+        ul.link2 {
+            margin-left: 0;
             float: left;
-            font-size: 33px;
-            margin-left: 25px;
-            margin-right: 20px;
-            text-decoration: none;
-            font-family: 'Grenze Gotisch';
-            list-style: none;
-            transition-property:font-size, margin-left, opacity;
-            transition-duration: 0.5s, 0.5s, 0.5s;
+            display: inline-flex;
         }
 
-        li.link:hover{
-            font-size: 35px;
-            margin-left: 15px;
-            opacity: 80%;
+
+        @media(max-width:1100px) {
+            ul.link2 {
+                margin-left: 7%;
+                padding-right: 0px;
+            }
+
         }
+
+
+        li.link1 {
+            padding-right: 0px;
+            float: left;
+            height: 100%;
+            margin-left: 80px;
+            list-style: none;
+        }
+
+        @media(max-width:1100px) {
+            li.link1 {
+                margin-left: 40px;
+                padding-right: 0px;
+            }
+
+        }
+
+        li.link_prod {
+            float: left;
+            height: 100%;
+            margin-left: 40px;
+            list-style: none;
+        }
+
+        @media(max-width:1100px) {
+            li.link_prod {
+                margin-left: 5px;
+                padding-right: 0px;
+            }
+
+        }
+
+
 
         li.link2 {
-            margin-top: 0px;
             float: left;
-            font-size: 33px;
-            margin-left: 20px;
-            margin-right: 20px;
-            text-decoration: none;
-            font-family: 'Grenze Gotisch', cursive;
+            height: 100%;
+            margin-left: 102px;
             list-style: none;
-            transition-property:font-size, margin-left, opacity;
-            transition-duration: 0.5s, 0.5s, 0.5s;
         }
 
-        li.link2:hover{
-            font-size: 35px;
-            margin-left: 30px;
-            opacity: 80%;
+        @media(max-width:1100px) {
+            li.link2 {
+                margin-left: 60px;
+            }
+
         }
 
-        a.link{
+        div.link {
+            margin-top: 20px;
+            float: left;
+            width: 90px;
+            height: 40px;
+        }
+
+        a.link {
+            font-family: 'Bree Serif', serif;
+            font-size: 31px;
+            font-weight: bold;
             text-decoration: none;
             color: rgba(187, 248, 248, 0.363);
             text-shadow: 2px 2px rgb(0, 0, 0);
         }
 
+        @media(max-width:1100px) {
+            a.link {
+                font-size: 27px;
+            }
+
+        }
+
         /* Header END */
-        div.nav{
+        div.nav {
             border-style: groove;
             border-color: rgb(101, 138, 138);
         }
-        div.page{
+
+        div.page {
             margin-top: 80px;
             background-color: white;
             width: 92%;
@@ -206,15 +268,25 @@
             margin-left: 4%;
             box-shadow: 5px 5px 5px 5px rgba(0, 0, 0, 0.2);
         }
+
+        div.page2 {
+            margin-top: 100px;
+            background-color: white;
+            width: 92%;
+            border-style: groove;
+            border-color: rgba(101, 138, 138, 0.7);
+            margin-left: 4%;
+            box-shadow: 5px 5px 5px 5px rgba(0, 0, 0, 0.2);
+        }
+
         /* Texts  */
-        .principal{
+        .principal {
             margin-top: 0px;
             color: rgba(187, 248, 248, 0.363);
             text-shadow: 2px 2px rgba(0, 0, 0, 0.9);
         }
 
-
-        div.title{
+        div.title {
             border-style: groove;
             border-color: rgba(101, 138, 138, 0.7);
             border-left: 0px;
@@ -227,29 +299,29 @@
             background-image: linear-gradient(silver, white, silver);
         }
 
-        .center{
+        .center {
             text-align: center;
         }
+
         /* title styles */
 
-        .cursive{
+        .cursive {
             font-family: 'Patua One', cursive;
         }
 
-
-        :root{
+        :root {
             --bg-color: rgb(76, 107, 107);
         }
 
-        .home-title span{
+        .home-title span {
             position: relative;
             overflow: hidden;
             display: block;
             line-height: 1.2;
         }
-        
 
-        .home-title span::after{
+
+        .home-title span::after {
             content: '';
             position: absolute;
             top: 0;
@@ -257,11 +329,11 @@
             width: 100%;
             height: 100%;
             background: white;
-            animation: a-ltr-after 0.5s cubic-bezier(.77,0,.18,1) forwards;
+            animation: a-ltr-after 0.5s cubic-bezier(.77, 0, .18, 1) forwards;
             transform: translateX(-101%);
         }
 
-        .home-title span::before{
+        .home-title span::before {
             content: '';
             position: absolute;
             top: 0;
@@ -269,29 +341,40 @@
             width: 100%;
             height: 100%;
             background: var(--bg-color);
-            animation: a-ltr-before 0.5s cubic-bezier(.77,0,.18,1) forwards;
+            animation: a-ltr-before 0.5s cubic-bezier(.77, 0, .18, 1) forwards;
             transform: translateX(0);
         }
 
         .home-title span:nth-of-type(1)::before,
-        .home-title span:nth-of-type(1)::after{
+        .home-title span:nth-of-type(1)::after {
             animation-delay: 1s;
         }
 
         .home-title span:nth-of-type(2)::before,
-        .home-title span:nth-of-type(2)::after{
+        .home-title span:nth-of-type(2)::after {
             animation-delay: 1.5s;
         }
 
-        @keyframes a-ltr-after{
-            0% {transform: translateX(-100%)}
-            100% {transform: translateX(101%)}
+        @keyframes a-ltr-after {
+            0% {
+                transform: translateX(-100%)
+            }
+
+            100% {
+                transform: translateX(101%)
+            }
         }
 
-        @keyframes a-ltr-before{
-            0% {transform: translateX(0)}
-            100% {transform: translateX(200%)}
+        @keyframes a-ltr-before {
+            0% {
+                transform: translateX(0)
+            }
+
+            100% {
+                transform: translateX(200%)
+            }
         }
+
         /* Texts END */
 
 
@@ -306,30 +389,35 @@
             border-style: groove;
         }
 
-        
-        amp-carousel.carousel1{
+
+        amp-carousel.carousel1 {
             background: fixed;
             width: 100%;
         }
-        div.slide{
+
+        div.slide {
+            display: inline-flex;
             width: 100%;
-            height: 305px;
             background: linear-gradient(90deg, rgba(250, 250, 250, 0.05), rgba(250, 250, 250, 1), rgba(250, 250, 250, 0.85));
         }
 
-        amp-img.carousel1{
+        amp-img.carousel1 {
             margin-left: 0px;
+            width: 40%;
             z-index: -1;
-            -webkit-mask-image:-webkit-gradient(linear, left top, right bottom, from(rgba(0,0,0,2)), to(rgba(0,0,0,0.5)));
-            mask-image: linear-gradient(to bottom, rgba(0,0,0,1), rgba(0,0,0,1));
+            -webkit-mask-image: -webkit-gradient(linear, left top, right bottom, from(rgba(0, 0, 0, 2)), to(rgba(0, 0, 0, 0.2)));
+            mask-image: linear-gradient(to bottom, rgba(0, 0, 0, 1), rgba(0, 0, 0, 1));
         }
 
-        amp-fit-text.carousel1{
+        amp-fit-text.carousel1 {
+            top: 0px;
+            margin-top: 0px;
             padding-left: 0px;
             text-align: center;
+            width: 60%;
         }
 
-        div.second{
+        div.second {
             margin-top: 0px;
             width: 100%;
             text-align: center;
@@ -337,31 +425,41 @@
             padding-bottom: 0px;
         }
 
-        div.third{
+        div.third {
             display: flex;
             width: 100%;
         }
 
-        div.icon{
-            margin-left: 3.5%;
+        div.icon {
+            margin-left: 10.1%;
+            width: 230px;
+            height: 370px;
         }
 
-        div.icon-text{
+        @media(max-width:1100px) {
+            div.icon {
+                margin-left: 3.5%;
+                width: 250px;
+                height: 340px;
+            }
+        }
+
+        div.icon-text {
             text-align: center;
-            width: 350px;
+            width: 270px;
             margin-left: 0%;
         }
 
-        amp-img.icon{
-            margin-left: 25%;
+        amp-img.icon {
+            margin-left: 5%;
         }
 
-        div.fourth{
+        div.fourth {
             display: flex;
         }
 
 
-        div.jobs{
+        div.jobs {
             margin-left: 40px;
             border-radius: 10%;
             border-style: groove;
@@ -374,11 +472,11 @@
             padding-bottom: 50px;
         }
 
-        a.job{
+        a.job {
             text-decoration: none;
         }
 
-        div.job{
+        div.job {
             margin-left: 30px;
             width: inherit;
             border-style: groove;
@@ -389,16 +487,16 @@
 
         }
 
-        div.job:hover{
+        div.job:hover {
             opacity: 120%;
         }
 
 
-        div.newing_news{
+        div.newing_news {
             display: flex;
         }
 
-        div.news{
+        div.news {
             margin-left: 30px;
             border-radius: 10%;
             border-style: groove;
@@ -410,22 +508,22 @@
             padding-bottom: 50px;
         }
 
-        div.newing{
+        div.newing {
             width: 90%;
             margin-left: 7.5%;
             display: flex;
             flex-wrap: wrap;
         }
-        
-        .newing>div{
+
+        .newing>div {
             flex: 0 46%;
         }
 
-        a.new{
+        a.new {
             text-decoration: none;
         }
 
-        div.new{
+        div.new {
             width: inherit;
             text-align: center;
             border-style: groove;
@@ -436,12 +534,12 @@
             opacity: 90%;
         }
 
-        div.new:hover{
+        div.new:hover {
             opacity: 120%;
         }
 
 
-        div.see_all{
+        div.see_all {
             margin: auto;
             background-color: transparent;
             margin-top: 20px;
@@ -455,30 +553,31 @@
             transition-delay: 0.5, 0.5, 0.5;
         }
 
-        div.see_all:hover{
+        div.see_all:hover {
             border-width: 6px;
         }
 
-        a.see_all{
+        a.see_all {
             text-align: center;
             margin-top: 90px;
             text-decoration: none;
             font-size: 20px;
             opacity: 90%;
-            transition-property:padding, font-size, opacity;
+            transition-property: padding, font-size, opacity;
             transition-duration: 0.5s, 0.5s, 0.5s;
             padding-bottom: 0px;
         }
 
-        a.see_all:hover{
+        a.see_all:hover {
             font-size: 25px;
             opacity: 120%;
         }
+
         /* HOME END */
 
         /* PRODUCT  */
 
-        div.prod{
+        div.prod {
             padding-top: 0px;
             border-top: 0.2px;
             border-bottom: 0px;
@@ -486,24 +585,25 @@
             border-color: rgb(101, 138, 138);
         }
 
-        div.slide2{
+        div.slide2 {
             margin-left: 150px;
             margin-bottom: 30px;
         }
-        
-        amp-carousel2{
+
+        amp-carousel2 {
             margin-top: 50px;
             width: 100%;
         }
 
-        h1.product{
+        h1.product {
             font-size: 35px;
         }
-        p.product{
+
+        p.product {
             font-size: 20px;
         }
-        
-        amp-fit-text.carousel2{
+
+        amp-fit-text.carousel2 {
             position: absolute;
             margin-left: 150px;
             margin-top: 40px;
@@ -511,7 +611,7 @@
 
         /* PRODUCT END */
         /* CONTACT */
-        div.box-form{
+        div.box-form {
             margin-left: 55px;
             width: 400px;
             text-align: center;
@@ -520,28 +620,28 @@
             border-color: silver;
             box-shadow: 0px 10px 10px 10px rgba(0, 0, 0, 0.2);
         }
-        
 
-        div.contact{
+
+        div.contact {
             width: 100%;
         }
-        
-        div.endereco{
+
+        div.endereco {
             margin-right: 90px;
             margin-top: 200px;
             width: 300px;
             height: 100px;
         }
 
-        h1.cont{
+        h1.cont {
             margin-top: 0px;
         }
 
-        h2.contact-text{
+        h2.contact-text {
             margin-bottom: 10px;
         }
 
-        div.checkbuttons{
+        div.checkbuttons {
             margin-top: 100px;
             align-items: center;
             text-align: center;
@@ -560,17 +660,18 @@
             margin-left: 3%;
             border-style: groove;
             border-color: rgba(0, 0, 0, 0.2);
-            transition-property: padding, background, border-color ;
+            transition-property: padding, background, border-color;
             transition-duration: 0.3s, 0.5s, 0.5s;
         }
 
-        label.checkbut:hover{
+        label.checkbut:hover {
             background: rgba(101, 138, 138, 0.4);
             border-style: groove;
             border-color: silver;
             padding: 25px 70px;
         }
-        label.checkbut:active{
+
+        label.checkbut:active {
             background-color: rgba(101, 138, 138, 0.6);
             padding: 23px 68px;
         }
@@ -580,27 +681,28 @@
             left: -100vw;
         }
 
-        div.contact-text{
+        div.contact-text {
             margin-top: 50px;
             text-align: center;
         }
 
-        div.contacting{
+        div.contacting {
             height: 200px;
         }
 
 
         /* CONTACT END */
-        
+
         /* NEWS */
-        h2.new{
+        h2.new {
             background-color: rgba(255, 255, 255, 0.9);
             border-style: groove;
             border-color: rgba(101, 138, 138, 0.6);
             padding-bottom: 0px;
         }
 
-        p.new{
+        p.new {
+            margin-top: 0px;
             padding-bottom: 0px;
             background-color: rgba(255, 255, 255, 0.9);
             border-style: groove;
@@ -612,8 +714,8 @@
 
         /* FOOTER  */
 
-        
-        footer{
+
+        footer {
             margin-top: 20px;
             height: 60px;
             background-color: rgb(101, 138, 138);
@@ -627,13 +729,12 @@
             transition-duration: 1s;
         }
 
-        footer:hover{
+        footer:hover {
             height: 300px;
             background-color: blue;
         }
 
-
-        a.footer{
+        a.footer {
             color: black;
             text-decoration: none;
         }
@@ -643,31 +744,65 @@
 
 </head>
 
-    <body>
+<body>
     <div class="nav">
-        <nav amp-fx="float-in-top">               
-            <ul class="link">
-                <li class="link"><a class="link" href="{% url 'home' %}">Home</a></li>
-                <li class="link"><a class="link" href="{% url 'product' %}">Produto</a></li>
-                <li class="link"><a class="link" href="{% url 'news' %}">Novidades</a></li>
-            </ul>
-            <a class="logo" href="{% url 'home' %}">
-                <div class="logo">
+        <nav amp-fx="float-in-top">
+            <ul class="link1">
+                <li class="link1">
+                    <div class="link">
+                        <a class="link" href="{% url 'home' %}">
+                            Home
+                        </a>
                     </div>
-            </a>
+                </li>
+                <li class="link_prod">
+                    <div class="link">
+                        <a class="link" href="{% url 'product' %}">
+                            Produtos
+                        </a>
+                    </div>
+                </li>
+                <li class="link1">
+                    <div class="link">
+                        <a class="link" href="{% url 'history' %}">
+                            História
+                        </a>
+                    </div>
+                </li>
+            </ul>
+            <div class="loging">
+                <a class="logo" href="{% url 'home' %}">
+                    <div class="logo">
+                    </div>
+                </a>
+            </div>
             <ul class="link2">
-                <li class="link2"><a class="link" href="{% url 'contact' %}">Vagas</a></li>
-                <li class="link2"><a class="link" href="{% url 'history' %}">História</a></li>
-                <li class="link2"><a class="link" href="{% url 'contact' %}">Contato</a></li>
+                <li class="link2">
+                    <div class="link">
+                        <a class="link" href="{% url 'contact' %}">
+                            Contato
+                        </a>
+                    </div>
+                </li>
+                <li class="link2">
+                    <div class="link" style="margin-left: -30px;">
+                        <a class="link" href="{% url 'news' %}">
+                            Novidades
+                        </a>
+                    </div>
+                </li>
+                <li class="link2">
+                    <div class="link">
+                        <a class="link" href="{% url 'contact' %}">
+                            Vagas
+                        </a>
+                    </div>
+                </li>
             </ul>
         </nav>
     </div>
-
-
     {% block content %}
-
     {% endblock %}
-
     <!-- Start Footer -->
     <br>
     <div class="footer">
@@ -677,11 +812,9 @@
                     © C2View
                 </small>
             </a>
-            <amp-iframe width="1500" height="300"
-            sandbox="allow-scripts allow-same-origin"
-            layout="fixed"
-            frameborder="0"
-            src="https://maps.google.com/maps?width=1200&amp;height=600&amp;hl=en&amp;q=Av%20Carlos%20mariguela%20-%20RJ,%20737%20loja%202%20Marica+(JRModas)&amp;t=&amp;z=15&amp;ie=UTF8&amp;iwloc=B&amp;output=embed">
+            <amp-iframe width="1500" height="300" sandbox="allow-scripts allow-same-origin" layout="fixed"
+                frameborder="0"
+                src="https://maps.google.com/maps?width=1200&amp;height=600&amp;hl=en&amp;q=Av%20Carlos%20mariguela%20-%20RJ,%20737%20loja%202%20Marica+(JRModas)&amp;t=&amp;z=15&amp;ie=UTF8&amp;iwloc=B&amp;output=embed">
             </amp-iframe>
         </footer>
     </div>

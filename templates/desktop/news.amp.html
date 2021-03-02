@@ -24,8 +24,10 @@
                         alt=""></amp-img>
                     {% endfor %}
                     </amp-carousel>
-                    <h2 class="principal center new">{{n.headline}}</h2>
-                    <p class="new">{{n.text|truncatechars:150}}</p>
+                    <div class="newing">
+                        <h2 class="principal center new">{{n.headline}}</h2>
+                        <p class="new">{{n.text}}</p>
+                    </div>
                 </div>
             {% endfor %}
         {% else %}

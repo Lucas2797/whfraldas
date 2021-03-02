@@ -1,0 +1,17 @@
+appdirs
+asgiref
+distlib
+Django
+django-phonenumber-field
+django-user-agents
+filelock
+gunicorn
+phonenumbers
+Pillow
+pytz
+PyYAML
+six
+sqlparse
+ua-parser
+user-agents
+virtualenv
